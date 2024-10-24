@@ -1,9 +1,13 @@
 ---
-sidebar_position: 1
 title: Overview
+description: Introduction to tokens in Casdoor
+keywords: [token, OAuth]
+authors: [sh1luo]
 ---
 
-Casdoor is based on OAuth. Tokens are users' OAuth token.
+Casdoor is built on OAuth and utilizes tokens as users' OAuth tokens.
+
+The following are the available token fields in Casdoor:
 
 - `Owner`
 - `Name`
@@ -13,7 +17,17 @@ Casdoor is based on OAuth. Tokens are users' OAuth token.
 - `User`
 - `Code`
 - `AccessToken`
-- `ExpireIn` Tokens will expire in hours
-- `Scope` Scope of authorization
-- `TokenType` E.g. type `Bear` 
+- `ExpireIn` (Tokens will expire in hours)
+- `Scope` (Scope of authorization)
+- `TokenType` (e.g., `Bearer` type)
 
+After logging into the application, there are three options to generate a JWT Token:
+
+- `JWT`
+- `JWT-Empty`
+- `JWT-Custom`
+- `JWT-Standard`
+
+The options are as follows: JWT will generate a token containing all User fields, JWT-Empty will generate a token with all non-empty values for the user, and JWT-Custom will generate a token containing custom User Token fields (you can choose attributes in the Token fields). JWT-Standard will generate a token with some standard OIDC token fields include email, phone, gender and Address (Address value in other format is not standard).
+
+![JWT-Custom](/img/token/overview/JWT-Custom.png)
